@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="UserManage"><!--自定义模块-->
+<head>
+	<meta charset="utf-8" />
+	<title>Angular Demo 用户管理</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<base href="/">
+</head>
+<body ng-controller="MainCtrl">
+	
+	<h1>用户管理</h1>
+	<div ng-view>
+		loading...
+	</div><!--视图模板容器-->
+	
+	<script type="text/javascript" src="js/angular.min.js" ></script>
+	<script type="text/javascript" src="js/angular-route.js" ></script>
+	<script type="text/javascript" src="js/controllers/controller.js" ></script>
+</body>
+</html>

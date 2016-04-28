@@ -1,0 +1,46 @@
+
+<div class="table-responsive">
+<table class="table"> 
+	<tr>
+		<td>用户名</td>
+		<td>性别</td>
+		<td>邮箱</td>
+		<td>操作</td>
+	</tr>
+	<tr ng-repeat="user in users"> <!-- for (var o in obj) {  }-->
+		<td>{{user.username}}</td>
+		<td>{{user.gender}}</td>
+		<td>{{user.email}}</td>
+		<td>
+			<a href="#/detail/{{user.id}}" class="btn btn-link">详情</a>
+			<a href="javascript:;" ng-click="remove($index)" class="btn btn-danger">删除</a>
+		</td>
+	</tr>
+</table>
+</div>
+<hr>
+<div class="table-responsive">
+<table class="table table-bordered">
+	<caption>用户列表</caption>
+  	<tr>
+		<th>用户名</th>
+		<th>性别</th>
+		<th>邮箱</th>
+		<th>操作</th>
+  	</tr>
+ 	<tr ng-repeat="employee in users" id='txt_name_{{employee.id}}' >
+        <td>
+         	<input type="text" ng-model="employee.username" readonly class="form-control"/>
+        </td>
+        <td><input type="text" ng-model="employee.gender" readonly class="form-control"/></td>
+        <td><input type="text" ng-model="employee.email" readonly class="form-control"/></td>
+        <td>
+			<a href="#/detail/{{employee.id}}" class="btn btn-link">详情</a>
+        	<edit ng-Model="employee" ng-show="showEdit"><a class="btn btn-primary">编辑</a></edit>
+            <update ng-Model="employee" ng-show="!showEdit"><a class="btn btn-info">更新</a></update> 
+            <cancel ng-Model="employee" ng-show="!showEdit"><a class="btn btn-default">取消</a></cancel>
+          	<delete ng-Model="employee"><a class="btn btn-danger">删除</a></delete>
+        </td>
+ 	</tr>
+</table>
+</div>
